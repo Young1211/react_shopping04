@@ -34,6 +34,10 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use('/api/users', require('./routes/users'));
+app.use('/api/product', require('./routes/product'));
+
+
+//백엔드에서 처리
 
 
 //use this to show the image you have in node js server to client (react js)
