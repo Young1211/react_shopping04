@@ -101,10 +101,25 @@ var storage = multer.diskStorage({
   });
 
 
+  router.get("/products_by_id", (req, res) => {
 
+    let type = req.query.type 
+    let productId = req.query.id
+    //productID를 이용해서 DB에서 productID와 같은 상품의 정보를 가져온다.
+
+    Product.find({_id: productId})
+      .populate('writer')
+      .exec((err, product)=>{
+        if(err) return res.status(400).send(err)
+        return res.status(200).send({success:true,product})
+      })
+
+  });
 
 
 module.exports = router;
+
+
 
 //프런트(FileUpload)에서 보내는 요청을 이쪽에서 받는다
 

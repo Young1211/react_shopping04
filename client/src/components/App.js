@@ -9,7 +9,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import UploadProductPage from "./views/UploadProductPage/UploadProductPage.js"
-
+import DetailProductPage from "./views/DetailProductPage/DetailProductPage.js"
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -24,6 +24,7 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/product/upload" component={Auth(UploadProductPage, true)} />
+          <Route exact path="/product/:productId" component={Auth(DetailProductPage, null)} />
         </Switch>
       </div>
       <Footer />
@@ -34,3 +35,4 @@ function App() {
 export default App;
 
 //로그인한 사람만 업로드할 수 있게끔 true로 바꾸기!
+//상세 페이지는 아무나 들어갈 수 있게 null로 설정!

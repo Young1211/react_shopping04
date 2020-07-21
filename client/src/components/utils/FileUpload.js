@@ -2,9 +2,7 @@
 //프론트엔드 파일 처리/
 //파일 업로드만을 위한 컴포넌트 
 
-
 //이미지 정보가 fileUpload 파일에 있다!
-
 
 import React, {useState} from "react";
 import Dropzone from "react-dropzone";
@@ -26,6 +24,8 @@ function FileUpload(props) {
     };
     formData.append("file", files[0]);
 
+    
+
     axios.post("/api/product/image", formData, config).then((response) => {
       if (response.data.success) {
         console.log(response.data);
@@ -45,7 +45,7 @@ function FileUpload(props) {
     setImages(newImages)
     props.refreshFunction(newImages)
 
-    
+
     //모든 새로운 이미지를 복사함
     
   }

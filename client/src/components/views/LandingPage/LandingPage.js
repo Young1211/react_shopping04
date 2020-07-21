@@ -75,7 +75,7 @@ const getProducts = (body) => {
       console.log("product", product);
       return <Col lg={6} md={8} xs={24} key={index}> 
           <Card
-            cover={<img style={{width:'100%',maxHeight:'150px'}} src={`http://localhost:5000/${product.images[0]}`} />}
+            cover={<a href={`/product/${product._id}`}><img style={{width:'100%',maxHeight:'150px'}} src={`http://localhost:5000/${product.images[0]}`} /></a>}
           >
             <Meta title={product.title} description={`$${product.price}`} />
           </Card>
@@ -83,6 +83,8 @@ const getProducts = (body) => {
     });
 
  //key 에러 -> key= {index}
+ //product._id - 아이디 고유 정보
+ 
 
    const showFiterResults = (filters) =>{
 
@@ -138,7 +140,6 @@ const getProducts = (body) => {
             <Checkbox list = {continents} handleFilters={filters =>handleFilters(filters,"continents")}/>
 
         {/* 라디오박스 */}
-
 
 
         {/* 서치. div style을 먹여서 오른쪽 상단에 위치시킨다!*/}
