@@ -35,12 +35,16 @@ app.use(cookieParser());
 
 app.use('/api/users', require('./routes/users'));
 app.use('/api/product', require('./routes/product'));
+app.use('/api/seller', require('./routes/seller'));
+
+
 //백엔드에서 처리
 
 
 //use this to show the image you have in node js server to client (react js)
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
+app.use('/profiles', express.static('profiles'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

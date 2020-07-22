@@ -10,6 +10,8 @@ import  {continents, price} from './Sections/Datas'
 //데이터 가져오기
 
 function LandingPage() {
+  
+
 
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0) //0부터 시작 
